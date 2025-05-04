@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexGen Digital Marketing - Grow Your Business Online</title>
+    <title>Razi Digital Agency - Grow Your Business Online</title>
     <style>
         /* CSS Reset & Base Styles */
         * {
@@ -12,19 +12,19 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header & Navigation */
         header {
             background-color: #fff;
@@ -34,66 +34,66 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: 700;
             color: #2a52be;
         }
-        
+
         .logo span {
             color: #6a11cb;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
         }
-        
+
         .nav-links li {
             margin-left: 30px;
         }
-        
+
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
             color: #2a52be;
         }
-        
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #6a11cb 0%, #2a52be 100%);
             color: white;
             padding: 180px 0 100px;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 60px; /* Adjusted for fixed header height */
         }
-        
+
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
             line-height: 1.2;
         }
-        
+
         .hero p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
         }
-        
+
         .btn {
             display: inline-block;
             background-color: #ff6b00;
@@ -106,42 +106,42 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .btn:hover {
             background-color: #e05d00;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
+
         /* Services Section */
         .services {
             padding: 100px 0;
             background-color: #fff;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .section-title h2 {
             font-size: 36px;
             color: #2a52be;
             margin-bottom: 15px;
         }
-        
+
         .section-title p {
             color: #666;
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .service-card {
             background-color: #f9f9f9;
             border-radius: 10px;
@@ -149,153 +149,153 @@
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-        
+
         .service-icon {
             font-size: 50px;
             margin-bottom: 20px;
             color: #6a11cb;
         }
-        
+
         .service-card h3 {
             font-size: 22px;
             margin-bottom: 15px;
             color: #333;
         }
-        
+
         .service-card p {
             color: #666;
             margin-bottom: 20px;
         }
-        
+
         /* Why Choose Us */
         .why-us {
             padding: 100px 0;
             background-color: #f0f5ff;
         }
-        
+
         .usp-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
-        
+
         .usp-item {
             display: flex;
             align-items: flex-start;
         }
-        
+
         .usp-icon {
             font-size: 24px;
             color: #2a52be;
             margin-right: 15px;
             margin-top: 5px;
         }
-        
+
         /* Case Studies */
         .case-studies {
             padding: 100px 0;
             background-color: #fff;
         }
-        
+
         .case-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .case-card {
             background-color: #f9f9f9;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        
+
         .case-img {
             height: 200px;
             background-color: #ddd;
             background-size: cover;
             background-position: center;
         }
-        
+
         .case-content {
             padding: 25px;
         }
-        
+
         .case-content h3 {
             margin-bottom: 10px;
             color: #2a52be;
         }
-        
+
         .case-stats {
             display: flex;
             margin-top: 15px;
         }
-        
+
         .stat {
             margin-right: 20px;
         }
-        
+
         .stat h4 {
             font-size: 28px;
             color: #6a11cb;
             margin-bottom: 5px;
         }
-        
+
         .stat p {
             color: #666;
             font-size: 14px;
         }
-        
+
         /* Testimonials */
         .testimonials {
             padding: 100px 0;
             background-color: #f0f5ff;
             text-align: center;
         }
-        
+
         .testimonial-slider {
             max-width: 800px;
             margin: 50px auto 0;
             position: relative;
         }
-        
+
         .testimonial {
             background-color: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            display: none;
+            display: none; /* Hidden by default */
         }
-        
+
         .testimonial.active {
-            display: block;
+            display: block; /* Show active testimonial */
             animation: fadeIn 0.5s;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         .testimonial-text {
             font-size: 18px;
             font-style: italic;
             margin-bottom: 20px;
             color: #555;
         }
-        
+
         .testimonial-author {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         .author-img {
             width: 50px;
             height: 50px;
@@ -304,21 +304,21 @@
             margin-right: 15px;
             background-size: cover;
         }
-        
+
         .author-info h4 {
             color: #333;
             margin-bottom: 5px;
         }
-        
+
         .author-info p {
             color: #666;
             font-size: 14px;
         }
-        
+
         .testimonial-nav {
             margin-top: 30px;
         }
-        
+
         .testimonial-nav button {
             background: none;
             border: none;
@@ -327,24 +327,24 @@
             cursor: pointer;
             color: #666;
         }
-        
+
         .testimonial-nav button:hover {
             color: #2a52be;
         }
-        
+
         /* Pricing */
         .pricing {
             padding: 100px 0;
             background-color: #fff;
         }
-        
+
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
-        
+
         .pricing-card {
             background-color: #f9f9f9;
             border-radius: 10px;
@@ -352,17 +352,17 @@
             text-align: center;
             transition: all 0.3s;
         }
-        
+
         .pricing-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-        
+
         .pricing-card.popular {
             border: 2px solid #6a11cb;
             position: relative;
         }
-        
+
         .popular-badge {
             position: absolute;
             top: -15px;
@@ -374,86 +374,86 @@
             font-size: 12px;
             font-weight: 600;
         }
-        
+
         .pricing-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
             color: #333;
         }
-        
+
         .price {
             font-size: 48px;
             font-weight: 700;
             color: #2a52be;
             margin-bottom: 20px;
         }
-        
+
         .price span {
             font-size: 16px;
             font-weight: normal;
             color: #666;
         }
-        
+
         .pricing-features {
             list-style: none;
             margin-bottom: 30px;
         }
-        
+
         .pricing-features li {
             padding: 10px 0;
             border-bottom: 1px solid #eee;
             color: #666;
         }
-        
+
         /* Contact */
         .contact {
             padding: 100px 0;
             background: linear-gradient(135deg, #6a11cb 0%, #2a52be 100%);
             color: white;
         }
-        
+
         .contact .section-title h2,
         .contact .section-title p {
             color: white;
         }
-        
+
         .contact .section-title p {
             opacity: 0.9;
         }
-        
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px;
             margin-top: 50px;
         }
-        
+
         .contact-info h3 {
             font-size: 24px;
             margin-bottom: 20px;
         }
-        
+
         .contact-details {
             margin-bottom: 30px;
         }
-        
+
         .contact-details p {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
         }
-        
+
         .contact-details i {
             margin-right: 15px;
             font-size: 20px;
-            color: #ff6b00;
+            color: #ff6b00; /* Orange accent for contact icons */
         }
-        
+
         .social-links {
             display: flex;
             margin-top: 30px;
         }
-        
+
         .social-links a {
             display: flex;
             align-items: center;
@@ -467,12 +467,12 @@
             text-decoration: none;
             transition: all 0.3s;
         }
-        
+
         .social-links a:hover {
-            background-color: #ff6b00;
+            background-color: #ff6b00; /* Orange accent on hover */
             transform: translateY(-3px);
         }
-        
+
         .contact-form input,
         .contact-form textarea,
         .contact-form select {
@@ -483,94 +483,92 @@
             border-radius: 5px;
             background-color: rgba(255,255,255,0.9);
         }
-        
+
         .contact-form textarea {
             height: 150px;
             resize: vertical;
         }
-        
+
         .contact-form .btn {
             width: 100%;
             padding: 15px;
             font-size: 16px;
         }
-        
+
         /* Footer */
         footer {
             background-color: #1a1a1a;
             color: #999;
             padding: 60px 0 20px;
         }
-        
+
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-        
+
         .footer-col h3 {
             color: white;
             margin-bottom: 20px;
             font-size: 18px;
         }
-        
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
+
         .footer-links a {
             color: #999;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .footer-links a:hover {
-            color: #ff6b00;
+            color: #ff6b00; /* Orange accent on hover */
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid #333;
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             .nav-links {
-                display: none;
+                display: none; /* Hide nav links on smaller screens (needs burger menu implementation) */
             }
-            
+
             .section-title h2 {
                 font-size: 30px;
             }
-            
+
             .price {
                 font-size: 36px;
             }
         }
     </style>
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Nex<span>Gen</span></div>
+                <div class="logo">Razi<span> Digital</span></div>
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
                     <li><a href="#why-us">Why Us</a></li>
@@ -578,11 +576,10 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
+                </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Boost Your Online Presence & Drive More Sales</h1>
@@ -591,14 +588,13 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
                 <h2>Our Expert Digital Marketing Services</h2>
                 <p>Comprehensive solutions to grow your business online</p>
             </div>
-            
+
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -608,7 +604,7 @@
                     <p>Rank higher on Google & attract organic traffic with our proven SEO strategies.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-hashtag"></i>
@@ -617,7 +613,7 @@
                     <p>Engage your audience on Facebook, Instagram & LinkedIn with targeted campaigns.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-pen-fancy"></i>
@@ -626,7 +622,7 @@
                     <p>High-quality blogs & articles to build authority and attract qualified leads.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-ad"></i>
@@ -635,7 +631,7 @@
                     <p>Laser-targeted Google & Facebook Ads for instant traffic and conversions.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-envelope"></i>
@@ -644,7 +640,7 @@
                     <p>Convert leads into loyal customers with automated email sequences.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
@@ -657,14 +653,13 @@
         </div>
     </section>
 
-    <!-- Why Choose Us -->
     <section class="why-us" id="why-us">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose NexGen Digital Marketing?</h2>
+                <h2>Why Choose Razi Digital Agency?</h2>
                 <p>We're different from other agencies - here's why</p>
             </div>
-            
+
             <div class="usp-grid">
                 <div class="usp-item">
                     <div class="usp-icon">
@@ -675,7 +670,7 @@
                         <p>Our team has helped hundreds of businesses grow online since 2012.</p>
                     </div>
                 </div>
-                
+
                 <div class="usp-item">
                     <div class="usp-icon">
                         <i class="fas fa-chart-line"></i>
@@ -685,7 +680,7 @@
                         <p>We make decisions based on analytics, not guesswork.</p>
                     </div>
                 </div>
-                
+
                 <div class="usp-item">
                     <div class="usp-icon">
                         <i class="fas fa-clipboard-check"></i>
@@ -695,7 +690,7 @@
                         <p>Monthly reports show exactly what we're doing and the results.</p>
                     </div>
                 </div>
-                
+
                 <div class="usp-item">
                     <div class="usp-icon">
                         <i class="fas fa-user-tie"></i>
@@ -705,7 +700,7 @@
                         <p>You'll work directly with an expert who knows your business.</p>
                     </div>
                 </div>
-                
+
                 <div class="usp-item">
                     <div class="usp-icon">
                         <i class="fas fa-hand-holding-usd"></i>
@@ -715,7 +710,7 @@
                         <p>Custom packages to fit businesses of all sizes and budgets.</p>
                     </div>
                 </div>
-                
+
                 <div class="usp-item">
                     <div class="usp-icon">
                         <i class="fas fa-headset"></i>
@@ -729,17 +724,16 @@
         </div>
     </section>
 
-    <!-- Case Studies -->
     <section class="case-studies" id="case-studies">
         <div class="container">
             <div class="section-title">
                 <h2>Real Results for Our Clients</h2>
                 <p>See how we've helped businesses like yours achieve success</p>
             </div>
-            
+
             <div class="case-grid">
                 <div class="case-card">
-                    <div class="case-img" style="background-image: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');"></div>
+                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/7B68EE/FFFFFF?text=Ecomm+Success');"></div>
                     <div class="case-content">
                         <h3>E-commerce Store Growth</h3>
                         <p>An online fashion retailer struggling with low traffic and conversions.</p>
@@ -755,9 +749,9 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="case-card">
-                    <div class="case-img" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');"></div>
+                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/4682B4/FFFFFF?text=Local+Biz+Growth');"></div>
                     <div class="case-content">
                         <h3>Local Business Expansion</h3>
                         <p>A fitness studio looking to attract more local clients.</p>
@@ -773,9 +767,9 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="case-card">
-                    <div class="case-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');"></div>
+                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/6A5ACD/FFFFFF?text=SaaS+Leads');"></div>
                     <div class="case-content">
                         <h3>B2B SaaS Lead Generation</h3>
                         <p>A software company needing qualified leads at lower cost.</p>
@@ -795,48 +789,47 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
                 <h2>What Our Clients Say</h2>
                 <p>Don't just take our word for it - hear from our happy clients</p>
             </div>
-            
+
             <div class="testimonial-slider">
                 <div class="testimonial active">
-                    <p class="testimonial-text">"NexGen transformed our online sales—we went from struggling to get 10 orders a week to over 50 orders a day in just 6 months. Their team is knowledgeable, responsive, and truly cares about our success."</p>
+                    <p class="testimonial-text">"Razi Digital transformed our online sales—we went from struggling to get 10 orders a week to over 50 orders a day in just 6 months. Their team is knowledgeable, responsive, and truly cares about our success."</p>
                     <div class="testimonial-author">
-                        <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                        <div class="author-img" style="background-image: url('https://placehold.co/50x50/E8E8E8/BDBDBD?text=SK');"></div>
                         <div class="author-info">
                             <h4>Sarah K.</h4>
                             <p>CEO, TechStart Inc.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="testimonial">
-                    <p class="testimonial-text">"Best ROI we've ever had from marketing! We tried several agencies before finding NexGen, and none delivered results like they have. Our cost per acquisition dropped by 60% while increasing our total sales."</p>
+                    <p class="testimonial-text">"Best ROI we've ever had from marketing! We tried several agencies before finding Razi Digital, and none delivered results like they have. Our cost per acquisition dropped by 60% while increasing our total sales."</p>
                     <div class="testimonial-author">
-                        <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        <div class="author-img" style="background-image: url('https://placehold.co/50x50/E8E8E8/BDBDBD?text=MT');"></div>
                         <div class="author-info">
                             <h4>Mark T.</h4>
                             <p>Owner, Elite Fitness</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="testimonial">
-                    <p class="testimonial-text">"As a small business owner, I was skeptical about digital marketing, but NexGen made it easy to understand and showed me exactly how my money was being spent. The results speak for themselves—we're now booked out 3 months in advance!"</p>
+                    <p class="testimonial-text">"As a small business owner, I was skeptical about digital marketing, but Razi Digital made it easy to understand and showed me exactly how my money was being spent. The results speak for themselves—we're now booked out 3 months in advance!"</p>
                     <div class="testimonial-author">
-                        <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');"></div>
+                        <div class="author-img" style="background-image: url('https://placehold.co/50x50/E8E8E8/BDBDBD?text=LM');"></div>
                         <div class="author-info">
                             <h4>Lisa M.</h4>
                             <p>Founder, Bloom Floral</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="testimonial-nav">
                     <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
                     <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
@@ -845,14 +838,13 @@
         </div>
     </section>
 
-    <!-- Pricing -->
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-title">
                 <h2>Simple, Transparent Pricing</h2>
                 <p>Choose the plan that fits your needs and budget</p>
             </div>
-            
+
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Starter</h3>
@@ -866,7 +858,7 @@
                     </ul>
                     <a href="#contact" class="btn">Get Started</a>
                 </div>
-                
+
                 <div class="pricing-card popular">
                     <div class="popular-badge">Most Popular</div>
                     <h3>Growth</h3>
@@ -882,7 +874,7 @@
                     </ul>
                     <a href="#contact" class="btn">Get Started</a>
                 </div>
-                
+
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
                     <div class="price">Custom <span>/month</span></div>
@@ -901,27 +893,26 @@
         </div>
     </section>
 
-    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>Let's Grow Your Business Together</h2>
                 <p>Ready to take your digital marketing to the next level? Get in touch today!</p>
             </div>
-            
+
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
                     <div class="contact-details">
                         <p><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</p>
-                        <p><i class="fas fa-envelope"></i> hello@nexgendigital.com</p>
+                        <p><i class="fas fa-envelope"></i> hello@razidigital.com</p>
                         <p><i class="fas fa-map-marker-alt"></i> 123 Marketing Ave, Suite 101, New York, NY 10001</p>
                     </div>
-                    
+
                     <h3>Business Hours</h3>
                     <p><i class="fas fa-clock"></i> Monday - Friday: 9am - 6pm EST</p>
                     <p><i class="fas fa-clock"></i> Saturday: 10am - 2pm EST</p>
-                    
+
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -929,7 +920,7 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="contact-form">
                     <form id="contactForm">
                         <input type="text" placeholder="Your Name" required>
@@ -952,15 +943,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>NexGen Digital</h3>
+                    <h3>Razi Digital Agency</h3>
                     <p>Helping businesses grow online since 2012 with data-driven digital marketing strategies.</p>
                 </div>
-                
+
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -971,18 +961,18 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">SEO Optimization</a></li>
-                        <li><a href="#">Social Media Marketing</a></li>
-                        <li><a href="#">PPC Advertising</a></li>
-                        <li><a href="#">Content Marketing</a></li>
-                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#services">SEO Optimization</a></li>
+                        <li><a href="#services">Social Media Marketing</a></li>
+                        <li><a href="#services">PPC Advertising</a></li>
+                        <li><a href="#services">Content Marketing</a></li>
+                        <li><a href="#services">Web Design</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-col">
                     <h3>Legal</h3>
                     <ul class="footer-links">
@@ -992,79 +982,140 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="copyright">
-                <p>&copy; 2024 NexGen Digital Marketing. All Rights Reserved.</p>
+                <p>&copy; <span id="current-year"></span> Razi Digital Agency. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         // Testimonial Slider
         const testimonials = document.querySelectorAll('.testimonial');
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
         let currentTestimonial = 0;
-        
+
         function showTestimonial(index) {
+            if (!testimonials || testimonials.length === 0) return; // Guard clause
+
             testimonials.forEach(testimonial => {
                 testimonial.classList.remove('active');
             });
-            
-            testimonials[index].classList.add('active');
-            currentTestimonial = index;
+
+            // Ensure index is within bounds
+             if (index >= 0 && index < testimonials.length) {
+                 testimonials[index].classList.add('active');
+                 currentTestimonial = index;
+             } else {
+                 // Handle invalid index if necessary, e.g., default to 0
+                 if (testimonials.length > 0) {
+                     testimonials[0].classList.add('active');
+                     currentTestimonial = 0;
+                 }
+             }
         }
-        
-        prevBtn.addEventListener('click', () => {
-            let newIndex = currentTestimonial - 1;
-            if (newIndex < 0) {
-                newIndex = testimonials.length - 1;
-            }
-            showTestimonial(newIndex);
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            let newIndex = currentTestimonial + 1;
-            if (newIndex >= testimonials.length) {
-                newIndex = 0;
-            }
-            showTestimonial(newIndex);
-        });
-        
-        // Auto-rotate testimonials
-        setInterval(() => {
-            let newIndex = currentTestimonial + 1;
-            if (newIndex >= testimonials.length) {
-                newIndex = 0;
-            }
-            showTestimonial(newIndex);
-        }, 5000);
-        
+
+         // Check if buttons exist before adding listeners
+         if (prevBtn && nextBtn && testimonials.length > 0) {
+            prevBtn.addEventListener('click', () => {
+                let newIndex = currentTestimonial - 1;
+                if (newIndex < 0) {
+                    newIndex = testimonials.length - 1;
+                }
+                showTestimonial(newIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                let newIndex = currentTestimonial + 1;
+                if (newIndex >= testimonials.length) {
+                    newIndex = 0;
+                }
+                showTestimonial(newIndex);
+            });
+
+             // Auto-rotate testimonials only if there are testimonials
+             setInterval(() => {
+                 let newIndex = currentTestimonial + 1;
+                 if (newIndex >= testimonials.length) {
+                     newIndex = 0;
+                 }
+                 showTestimonial(newIndex);
+             }, 5000); // Rotate every 5 seconds
+
+             // Initialize the first testimonial
+             showTestimonial(0);
+
+         } else if (testimonials.length > 0) {
+             // If buttons aren't found but testimonials exist, show the first one
+             showTestimonial(0);
+         }
+
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Calculate offset for fixed header if needed
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
-        
+
         // Form submission
         const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Here you would typically send the form data to your server
-            // For this demo, we'll just show an alert
-            alert('Thank you for your message! We will contact you soon.');
-            contactForm.reset();
-        });
-        
-        // Mobile menu toggle (would need additional HTML/CSS for full implementation)
-        // This is a placeholder for mobile functionality
+        if(contactForm){ // Check if form exists
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Basic validation example (can be expanded)
+                const emailInput = contactForm.querySelector('input[type="email"]');
+                if (emailInput && !emailInput.value.includes('@')) {
+                     alert('Please enter a valid email address.');
+                     return;
+                }
+
+                // Here you would typically send the form data to your server
+                // using fetch() or XMLHttpRequest
+                // Example:
+                // const formData = new FormData(contactForm);
+                // fetch('/your-server-endpoint', { method: 'POST', body: formData })
+                //   .then(response => response.json())
+                //   .then(data => { alert('Success!'); contactForm.reset(); })
+                //   .catch(error => { alert('Error sending message.'); });
+
+                // For this demo, we'll just show an alert
+                alert('Thank you for your message! We will contact you soon.');
+                contactForm.reset();
+            });
+        }
+
+        // Dynamic Copyright Year
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Add basic mobile menu toggle functionality (requires CSS for styling the menu)
+        // const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        // const navLinks = document.querySelector('.nav-links');
+        // if (mobileMenuToggle && navLinks) {
+        //     mobileMenuToggle.addEventListener('click', () => {
+        //         navLinks.classList.toggle('active'); // Add/remove 'active' class to show/hide
+        //     });
+        // }
+
     </script>
 </body>
 </html>
