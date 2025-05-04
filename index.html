@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Razi Digital Agency - Grow Your Business Online</title>
+    <title>Razi Digital Agency - Stop Losing Customers, Start Dominating Online</title>
     <style>
         /* CSS Reset & Base Styles */
         * {
@@ -39,7 +39,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0; /* Slightly reduced padding */
         }
 
         .logo {
@@ -66,6 +66,23 @@
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
+            padding-bottom: 5px; /* Space for potential underline effect */
+            position: relative;
+        }
+
+        .nav-links a::after { /* Underline effect on hover */
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ff6b00;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
@@ -76,41 +93,45 @@
         .hero {
             background: linear-gradient(135deg, #6a11cb 0%, #2a52be 100%);
             color: white;
-            padding: 180px 0 100px;
+            padding: 180px 0 120px; /* Increased bottom padding */
             text-align: center;
             margin-top: 60px; /* Adjusted for fixed header height */
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: clamp(2.5rem, 6vw, 3.5rem); /* Responsive font size */
+            margin-bottom: 25px;
             line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
 
         .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
+            font-size: clamp(1.1rem, 3vw, 1.3rem); /* Responsive font size */
+            max-width: 750px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
         }
 
         .btn {
             display: inline-block;
-            background-color: #ff6b00;
+            background-color: #ff6b00; /* Bright orange CTA */
             color: white;
-            padding: 12px 30px;
+            padding: 15px 35px; /* Larger button */
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            font-size: 1.1rem; /* Slightly larger font */
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4); /* Orange glow */
         }
 
         .btn:hover {
             background-color: #e05d00;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px) scale(1.03); /* More pronounced hover effect */
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.5);
         }
 
         /* Services Section */
@@ -125,34 +146,40 @@
         }
 
         .section-title h2 {
-            font-size: 36px;
+            font-size: clamp(2rem, 5vw, 2.5rem); /* Responsive font size */
             color: #2a52be;
             margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .section-title p {
             color: #666;
             max-width: 700px;
             margin: 0 auto;
+            font-size: 1.1rem;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 35px; /* Slightly increased gap */
         }
 
         .service-card {
             background-color: #f9f9f9;
             border-radius: 10px;
-            padding: 30px;
+            padding: 35px 30px; /* Increased padding */
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee; /* Subtle border */
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: space-between; /* Push button to bottom */
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(42, 82, 190, 0.15); /* Blue shadow on hover */
         }
 
         .service-icon {
@@ -165,36 +192,67 @@
             font-size: 22px;
             margin-bottom: 15px;
             color: #333;
+            font-weight: 600;
         }
 
         .service-card p {
-            color: #666;
-            margin-bottom: 20px;
+            color: #555; /* Slightly darker text */
+            margin-bottom: 25px; /* More space before button */
+            flex-grow: 1; /* Allow paragraph to take available space */
         }
+
+        .service-card .btn { /* Style button within card */
+             padding: 10px 25px;
+             font-size: 0.9rem;
+             background-color: #2a52be; /* Blue button */
+             box-shadow: 0 4px 10px rgba(42, 82, 190, 0.3);
+             margin-top: auto; /* Push button to bottom */
+        }
+         .service-card .btn:hover {
+             background-color: #6a11cb; /* Purple on hover */
+             box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+         }
 
         /* Why Choose Us */
         .why-us {
             padding: 100px 0;
-            background-color: #f0f5ff;
+            background-color: #f0f5ff; /* Light blue background */
         }
 
         .usp-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+            gap: 35px;
             margin-top: 50px;
         }
 
         .usp-item {
             display: flex;
             align-items: flex-start;
+            background-color: #fff; /* White background for items */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .usp-icon {
-            font-size: 24px;
-            color: #2a52be;
-            margin-right: 15px;
+            font-size: 28px; /* Larger icon */
+            color: #ff6b00; /* Orange icon */
+            margin-right: 20px;
             margin-top: 5px;
+            min-width: 30px; /* Ensure alignment */
+        }
+
+        .usp-item h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2a52be;
+        }
+        .usp-item p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         /* Case Studies */
@@ -205,51 +263,74 @@
 
         .case-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger cards */
+            gap: 35px;
         }
 
         .case-card {
             background-color: #f9f9f9;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.07); /* Slightly stronger shadow */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+         .case-card:hover {
+             transform: scale(1.03); /* Scale effect on hover */
+             box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+         }
 
         .case-img {
-            height: 200px;
+            height: 220px; /* Taller image */
             background-color: #ddd;
             background-size: cover;
             background-position: center;
+            position: relative;
         }
+         .case-img::after { /* Subtle overlay */
+             content: '';
+             position: absolute;
+             inset: 0;
+             background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+         }
 
         .case-content {
-            padding: 25px;
+            padding: 30px;
         }
 
         .case-content h3 {
             margin-bottom: 10px;
             color: #2a52be;
+            font-size: 20px;
+            font-weight: 600;
         }
+         .case-content .category { /* Optional category tag */
+             display: inline-block;
+             background-color: #e0eaff;
+             color: #2a52be;
+             padding: 3px 10px;
+             border-radius: 15px;
+             font-size: 12px;
+             font-weight: 500;
+             margin-bottom: 15px;
+         }
 
         .case-stats {
             display: flex;
-            margin-top: 15px;
-        }
-
-        .stat {
-            margin-right: 20px;
+            margin-top: 20px;
+            gap: 25px; /* More space between stats */
         }
 
         .stat h4 {
-            font-size: 28px;
+            font-size: 32px; /* Larger stat number */
             color: #6a11cb;
             margin-bottom: 5px;
+            font-weight: 700;
         }
 
         .stat p {
             color: #666;
             font-size: 14px;
+            font-weight: 500;
         }
 
         /* Testimonials */
@@ -263,51 +344,70 @@
             max-width: 800px;
             margin: 50px auto 0;
             position: relative;
+            overflow: hidden; /* Ensure smooth transitions */
         }
 
         .testimonial {
             background-color: white;
-            padding: 30px;
+            padding: 40px; /* More padding */
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             display: none; /* Hidden by default */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Fade transition */
         }
 
         .testimonial.active {
             display: block; /* Show active testimonial */
-            animation: fadeIn 0.5s;
+            opacity: 1;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        /* Removed Keyframe animation as opacity transition is smoother */
 
         .testimonial-text {
-            font-size: 18px;
+            font-size: 1.15rem; /* Larger quote text */
             font-style: italic;
-            margin-bottom: 20px;
-            color: #555;
+            margin-bottom: 25px;
+            color: #444; /* Darker quote text */
+            line-height: 1.7;
+            position: relative;
+            padding-left: 30px; /* Space for quote mark */
         }
+        .testimonial-text::before { /* Quote mark */
+            content: '\f10d'; /* Font Awesome quote left */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 24px;
+            color: #6a11cb;
+            opacity: 0.3;
+        }
+
 
         .testimonial-author {
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 20px; /* Added margin */
         }
 
         .author-img {
-            width: 50px;
-            height: 50px;
+            width: 60px; /* Larger image */
+            height: 60px;
             border-radius: 50%;
             background-color: #ddd;
             margin-right: 15px;
             background-size: cover;
+            border: 3px solid #fff; /* White border */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .author-info h4 {
             color: #333;
             margin-bottom: 5px;
+            font-weight: 600;
         }
 
         .author-info p {
@@ -320,16 +420,21 @@
         }
 
         .testimonial-nav button {
-            background: none;
+            background: rgba(42, 82, 190, 0.1); /* Light blue background */
             border: none;
-            font-size: 20px;
+            font-size: 18px; /* Slightly smaller nav buttons */
             margin: 0 10px;
             cursor: pointer;
-            color: #666;
+            color: #2a52be; /* Blue color */
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .testimonial-nav button:hover {
-            color: #2a52be;
+            background-color: #2a52be;
+            color: white;
         }
 
         /* Pricing */
@@ -343,6 +448,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
+            align-items: stretch; /* Make cards same height */
         }
 
         .pricing-card {
@@ -351,59 +457,106 @@
             padding: 40px 30px;
             text-align: center;
             transition: all 0.3s;
+            border: 1px solid #eee;
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Stack vertically */
         }
 
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-10px) scale(1.02); /* Scale and lift */
+            box-shadow: 0 20px 40px rgba(42, 82, 190, 0.15); /* Stronger blue shadow */
+            z-index: 5; /* Bring forward */
         }
 
         .pricing-card.popular {
-            border: 2px solid #6a11cb;
+            border: 2px solid #6a11cb; /* Purple border for popular */
             position: relative;
+            transform: scale(1.05); /* Make popular slightly larger */
+            z-index: 10; /* Ensure popular is on top */
         }
+         .pricing-card.popular:hover {
+             transform: translateY(-10px) scale(1.07); /* Enhance hover */
+             box-shadow: 0 25px 50px rgba(106, 17, 203, 0.2); /* Purple shadow */
+         }
 
         .popular-badge {
             position: absolute;
             top: -15px;
-            right: 20px;
-            background-color: #6a11cb;
+            left: 50%; /* Center badge */
+            transform: translateX(-50%); /* Center badge */
+            background: linear-gradient(45deg, #ff6b00, #e05d00); /* Orange gradient */
             color: white;
-            padding: 5px 15px;
+            padding: 7px 20px;
             border-radius: 30px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
+            box-shadow: 0 3px 10px rgba(255, 107, 0, 0.5);
         }
 
         .pricing-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
             color: #333;
+            font-weight: 600;
+            margin-top: 15px; /* Space below badge */
         }
 
         .price {
-            font-size: 48px;
+            font-size: clamp(2.5rem, 7vw, 3.5rem); /* Responsive price */
             font-weight: 700;
             color: #2a52be;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .price span {
-            font-size: 16px;
-            font-weight: normal;
+            font-size: 1rem; /* Smaller /month text */
+            font-weight: 500; /* Medium weight */
             color: #666;
         }
 
         .pricing-features {
             list-style: none;
             margin-bottom: 30px;
+            flex-grow: 1; /* Allow features list to grow */
         }
 
         .pricing-features li {
-            padding: 10px 0;
+            padding: 12px 0; /* More spacing */
             border-bottom: 1px solid #eee;
-            color: #666;
+            color: #555; /* Darker feature text */
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 25px; /* Space for checkmark */
         }
+        .pricing-features li::before { /* Checkmark icon */
+            content: '\f00c'; /* Font Awesome check */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 14px;
+            color: #2a52be; /* Blue checkmark */
+            font-size: 14px;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+         .pricing-card .btn {
+             margin-top: auto; /* Push button to bottom */
+             width: 80%; /* Control button width */
+             margin-left: auto;
+             margin-right: auto;
+         }
+         .pricing-card.popular .btn {
+             background-color: #6a11cb; /* Purple button for popular */
+             box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
+         }
+         .pricing-card.popular .btn:hover {
+             background-color: #5e16b6;
+             box-shadow: 0 6px 20px rgba(106, 17, 203, 0.5);
+         }
 
         /* Contact */
         .contact {
@@ -418,19 +571,22 @@
         }
 
         .contact .section-title p {
-            opacity: 0.9;
+            opacity: 0.95; /* More opaque */
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted minmax */
             gap: 50px;
-            margin-top: 50px;
+            margin-top: 60px; /* Increased margin */
         }
 
         .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 26px; /* Larger heading */
+            margin-bottom: 25px;
+            font-weight: 600;
+            border-left: 4px solid #ff6b00; /* Orange accent border */
+            padding-left: 15px;
         }
 
         .contact-details {
@@ -440,37 +596,58 @@
         .contact-details p {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 18px; /* Increased spacing */
+            font-size: 1.05rem; /* Slightly larger text */
         }
 
         .contact-details i {
             margin-right: 15px;
-            font-size: 20px;
+            font-size: 22px; /* Larger icons */
             color: #ff6b00; /* Orange accent for contact icons */
+            width: 25px; /* Ensure alignment */
+            text-align: center;
         }
+         .contact-details a {
+             color: white;
+             text-decoration: none;
+             transition: color 0.3s;
+         }
+         .contact-details a:hover {
+             color: #ffbd8a; /* Lighter orange on hover */
+             text-decoration: underline;
+         }
 
         .social-links {
             display: flex;
             margin-top: 30px;
+            gap: 15px; /* Gap between icons */
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255,255,255,0.1);
+            width: 45px; /* Larger icons */
+            height: 45px;
+            background-color: rgba(255,255,255,0.15); /* Slightly more visible */
             border-radius: 50%;
-            margin-right: 15px;
             color: white;
             text-decoration: none;
             transition: all 0.3s;
+            font-size: 1.1rem; /* Larger icon font size */
         }
 
         .social-links a:hover {
             background-color: #ff6b00; /* Orange accent on hover */
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.1); /* Lift and scale */
+        }
+
+        .contact-form h3 { /* Added heading for form */
+             font-size: 26px;
+             margin-bottom: 25px;
+             font-weight: 600;
+             border-left: 4px solid #ff6b00;
+             padding-left: 15px;
         }
 
         .contact-form input,
@@ -479,10 +656,21 @@
             width: 100%;
             padding: 15px;
             margin-bottom: 20px;
-            border: none;
-            border-radius: 5px;
+            border: 1px solid transparent; /* Start transparent */
+            border-radius: 8px; /* More rounded */
             background-color: rgba(255,255,255,0.9);
+            color: #333;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
+         .contact-form input:focus,
+         .contact-form textarea:focus,
+         .contact-form select:focus {
+             outline: none;
+             border-color: #ff6b00; /* Orange border on focus */
+             box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.3); /* Orange glow on focus */
+             background-color: #fff; /* White background on focus */
+         }
 
         .contact-form textarea {
             height: 150px;
@@ -492,74 +680,182 @@
         .contact-form .btn {
             width: 100%;
             padding: 15px;
-            font-size: 16px;
+            font-size: 1.1rem; /* Match hero button */
         }
+         .form-message { /* Style for success/error messages */
+             margin-top: 15px;
+             padding: 10px;
+             border-radius: 5px;
+             font-weight: 500;
+             text-align: center;
+             display: none; /* Hidden by default */
+         }
+         .form-message.success {
+             background-color: #d4edda;
+             color: #155724;
+             border: 1px solid #c3e6cb;
+         }
+         .form-message.error {
+             background-color: #f8d7da;
+             color: #721c24;
+             border: 1px solid #f5c6cb;
+         }
 
         /* Footer */
         footer {
-            background-color: #1a1a1a;
-            color: #999;
-            padding: 60px 0 20px;
+            background-color: #1a1a1a; /* Dark footer */
+            color: #aaa; /* Lighter grey text */
+            padding: 70px 0 30px; /* Increased padding */
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax */
+            gap: 40px 50px; /* Increased gap */
+            margin-bottom: 50px;
         }
 
         .footer-col h3 {
             color: white;
-            margin-bottom: 20px;
-            font-size: 18px;
+            margin-bottom: 25px; /* More space */
+            font-size: 1.1rem; /* Slightly larger */
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
         }
+         .footer-col h3::after { /* Underline accent */
+             content: '';
+             position: absolute;
+             width: 40px;
+             height: 2px;
+             background-color: #ff6b00; /* Orange accent */
+             bottom: 0;
+             left: 0;
+         }
+
+         .footer-col p { /* Style paragraph in first column */
+             color: #ccc; /* Lighter text for description */
+             line-height: 1.7;
+             font-size: 0.95rem;
+         }
 
         .footer-links {
             list-style: none;
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px; /* Increased spacing */
         }
 
         .footer-links a {
-            color: #999;
+            color: #aaa;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s, padding-left 0.3s;
+            position: relative;
+            display: inline-block; /* Needed for pseudo-element */
+        }
+        .footer-links a::before { /* Arrow on hover */
+            content: '\f0da'; /* Font Awesome right arrow */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            transition: opacity 0.3s, left 0.3s;
+            color: #ff6b00;
         }
 
         .footer-links a:hover {
             color: #ff6b00; /* Orange accent on hover */
+            padding-left: 5px; /* Make space for arrow */
         }
+         .footer-links a:hover::before {
+             opacity: 1;
+             left: -5px;
+         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid #333;
+            color: #888; /* Slightly lighter copyright */
+            font-size: 0.9rem;
         }
 
         /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
+        @media (max-width: 992px) {
+             .pricing-card.popular {
+                 transform: scale(1.02); /* Slightly reduce initial scale on medium screens */
+             }
+             .pricing-card.popular:hover {
+                 transform: translateY(-10px) scale(1.05);
+             }
+        }
 
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            .hero h1 {
+                font-size: clamp(2.2rem, 7vw, 2.8rem);
+            }
             .hero p {
-                font-size: 18px;
+                font-size: clamp(1rem, 4vw, 1.1rem);
             }
 
             .nav-links {
                 display: none; /* Hide nav links on smaller screens (needs burger menu implementation) */
             }
+            nav {
+                padding: 15px 0;
+            }
 
             .section-title h2 {
-                font-size: 30px;
+                font-size: clamp(1.8rem, 6vw, 2.2rem);
+            }
+            .section-title p {
+                font-size: 1rem;
+            }
+
+            .services-grid, .usp-grid, .case-grid, .pricing-grid, .contact-grid, .footer-grid {
+                grid-template-columns: 1fr; /* Stack columns */
+                gap: 30px;
             }
 
             .price {
-                font-size: 36px;
+                font-size: clamp(2.8rem, 10vw, 3.2rem);
             }
+            .pricing-card.popular {
+                 transform: scale(1); /* No initial scale on small screens */
+             }
+             .pricing-card.popular:hover {
+                 transform: translateY(-10px) scale(1.03);
+             }
+
+            .contact-info, .contact-form {
+                text-align: center;
+            }
+            .contact-details p {
+                justify-content: center;
+            }
+             .contact-info h3, .contact-form h3 {
+                 border-left: none;
+                 padding-left: 0;
+                 text-align: center;
+                 border-bottom: 3px solid #ff6b00; /* Bottom border instead */
+                 display: inline-block; /* Center the border */
+                 margin-bottom: 30px;
+             }
+             .social-links {
+                 justify-content: center;
+             }
+             .footer-col {
+                 text-align: center;
+             }
+             .footer-col h3::after {
+                 left: 50%;
+                 transform: translateX(-50%); /* Center underline */
+             }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -570,11 +866,11 @@
             <nav>
                 <div class="logo">Razi<span> Digital</span></div>
                 <ul class="nav-links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#why-us">Why Us</a></li>
-                    <li><a href="#case-studies">Case Studies</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#services">Unlock Growth</a></li>
+                    <li><a href="#why-us">Our Edge</a></li>
+                    <li><a href="#case-studies">Success Stories</a></li>
+                    <li><a href="#testimonials">Client Raves</a></li>
+                    <li><a href="#contact">Get Started</a></li>
                 </ul>
                 </nav>
         </div>
@@ -582,72 +878,77 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Boost Your Online Presence & Drive More Sales</h1>
-            <p>We deliver tailored digital marketing solutions for startups & established brands.</p>
-            <a href="#contact" class="btn">Get Your Free Strategy Call →</a>
+            <h1>Tired of Being Invisible Online? Dominate Your Market & Skyrocket Sales.</h1>
+            <p>Stop guessing. Start growing. We craft data-driven digital strategies that turn clicks into loyal customers and deliver measurable ROI for ambitious brands like yours.</p>
+            <a href="#contact" class="btn">Claim Your FREE Growth Blueprint Now →</a>
         </div>
     </section>
 
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our Expert Digital Marketing Services</h2>
-                <p>Comprehensive solutions to grow your business online</p>
+                <h2>Your Path to Unstoppable Online Growth</h2>
+                <p>Stop leaving money on the table. Our expert services are designed to attract, engage, and convert your ideal customers.</p>
             </div>
 
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                    <div> <div class="service-icon">
+                            <i class="fas fa-rocket"></i> </div>
+                        <h3>SEO That Drives Revenue</h3>
+                        <p>Don't just rank higher, rank smarter. We attract ready-to-buy customers actively searching for your solutions, boosting your organic traffic and sales pipeline.</p>
                     </div>
-                    <h3>SEO Optimization</h3>
-                    <p>Rank higher on Google & attract organic traffic with our proven SEO strategies.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <a href="#contact" class="btn">Dominate Search Results</a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hashtag"></i>
+                     <div>
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i> </div>
+                        <h3>Social Media That Converts</h3>
+                        <p>Go beyond likes. We build engaged communities on platforms like Facebook, Instagram & LinkedIn, turning followers into brand advocates and paying customers.</p>
                     </div>
-                    <h3>Social Media Marketing</h3>
-                    <p>Engage your audience on Facebook, Instagram & LinkedIn with targeted campaigns.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <a href="#contact" class="btn">Ignite Social Engagement</a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-pen-fancy"></i>
+                     <div>
+                        <div class="service-icon">
+                            <i class="fas fa-feather-alt"></i> </div>
+                        <h3>Content That Builds Authority</h3>
+                        <p>Become the go-to expert. We create compelling blogs and articles that establish trust, attract qualified leads, and position you as the industry leader.</p>
                     </div>
-                    <h3>Content Marketing</h3>
-                    <p>High-quality blogs & articles to build authority and attract qualified leads.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <a href="#contact" class="btn">Become the Authority</a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-ad"></i>
+                     <div>
+                        <div class="service-icon">
+                            <i class="fas fa-bullseye"></i> </div>
+                        <h3>PPC Ads That Deliver ROI</h3>
+                        <p>Stop wasting ad spend. Our laser-targeted Google & Facebook Ads reach your ideal customer instantly, driving immediate traffic and maximizing conversions.</p>
                     </div>
-                    <h3>PPC Advertising</h3>
-                    <p>Laser-targeted Google & Facebook Ads for instant traffic and conversions.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <a href="#contact" class="btn">Get Instant Traffic</a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-envelope"></i>
+                     <div>
+                        <div class="service-icon">
+                            <i class="fas fa-hand-holding-heart"></i> </div>
+                        <h3>Email Marketing That Nurtures</h3>
+                        <p>Turn leads into lifetime value. Our automated sequences build relationships, nurture prospects, and convert subscribers into loyal, repeat customers.</p>
                     </div>
-                    <h3>Email Marketing</h3>
-                    <p>Convert leads into loyal customers with automated email sequences.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <a href="#contact" class="btn">Boost Customer Loyalty</a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                     <div>
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i> </div>
+                        <h3>Websites That Sell</h3>
+                        <p>Your website is your digital storefront. We design fast, stunning, mobile-first websites optimized for conversions, turning visitors into paying clients.</p>
                     </div>
-                    <h3>Web Design & Development</h3>
-                    <p>Fast, mobile-friendly websites that convert visitors into customers.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <a href="#contact" class="btn">Upgrade Your Website</a>
                 </div>
             </div>
         </div>
@@ -656,8 +957,8 @@
     <section class="why-us" id="why-us">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Razi Digital Agency?</h2>
-                <p>We're different from other agencies - here's why</p>
+                <h2>The Razi Digital Advantage: Your Unfair Edge</h2>
+                <p>Choosing an agency is crucial. Here’s why top brands trust us to deliver exceptional results, consistently.</p>
             </div>
 
             <div class="usp-grid">
@@ -666,58 +967,53 @@
                         <i class="fas fa-award"></i>
                     </div>
                     <div>
-                        <h3>10+ Years of Experience</h3>
-                        <p>Our team has helped hundreds of businesses grow online since 2012.</p>
+                        <h3>Decade of Proven Results</h3>
+                        <p>Leverage 10+ years of battle-tested expertise. We've navigated market shifts and algorithm updates, consistently delivering growth for hundreds of clients.</p>
                     </div>
                 </div>
 
                 <div class="usp-item">
                     <div class="usp-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+                        <i class="fas fa-brain"></i> </div>
                     <div>
-                        <h3>Data-Backed Strategies</h3>
-                        <p>We make decisions based on analytics, not guesswork.</p>
+                        <h3>Data, Not Drama</h3>
+                        <p>Forget guesswork. Every strategy is fueled by deep analytics and performance data, ensuring your marketing budget works smarter, not just harder.</p>
                     </div>
                 </div>
 
                 <div class="usp-item">
                     <div class="usp-icon">
-                        <i class="fas fa-clipboard-check"></i>
-                    </div>
+                        <i class="fas fa-eye"></i> </div>
                     <div>
-                        <h3>Transparent Reporting</h3>
-                        <p>Monthly reports show exactly what we're doing and the results.</p>
+                        <h3>Radical Transparency</h3>
+                        <p>No black boxes. You get clear, actionable monthly reports detailing exactly where your investment goes and the tangible results achieved.</p>
                     </div>
                 </div>
 
                 <div class="usp-item">
                     <div class="usp-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
+                        <i class="fas fa-user-shield"></i> </div>
                     <div>
-                        <h3>Dedicated Account Managers</h3>
-                        <p>You'll work directly with an expert who knows your business.</p>
+                        <h3>Your Dedicated Growth Partner</h3>
+                        <p>Receive personalized attention from a senior expert who understands your unique goals and is committed to your long-term success.</p>
                     </div>
                 </div>
 
                 <div class="usp-item">
                     <div class="usp-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
+                        <i class="fas fa-dollar-sign"></i> </div>
                     <div>
-                        <h3>Affordable Pricing</h3>
-                        <p>Custom packages to fit businesses of all sizes and budgets.</p>
+                        <h3>Maximum ROI, Sensible Investment</h3>
+                        <p>Get enterprise-level results without the enterprise price tag. Our flexible packages deliver exceptional value for ambitious businesses of all sizes.</p>
                     </div>
                 </div>
 
                 <div class="usp-item">
                     <div class="usp-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
+                        <i class="fas fa-sync-alt"></i> </div>
                     <div>
-                        <h3>24/7 Support</h3>
-                        <p>Our team is always available when you need us.</p>
+                        <h3>Proactive & Agile</h3>
+                        <p>The digital landscape changes fast. We stay ahead of the curve, constantly optimizing your campaigns for peak performance and adapting to new opportunities.</p>
                     </div>
                 </div>
             </div>
@@ -727,19 +1023,20 @@
     <section class="case-studies" id="case-studies">
         <div class="container">
             <div class="section-title">
-                <h2>Real Results for Our Clients</h2>
-                <p>See how we've helped businesses like yours achieve success</p>
+                <h2>Proof is in the Profits: Our Clients' Success Stories</h2>
+                <p>We don't just promise results, we deliver them. See the transformative impact we've had.</p>
             </div>
 
             <div class="case-grid">
                 <div class="case-card">
-                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/7B68EE/FFFFFF?text=Ecomm+Success');"></div>
+                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/7B68EE/FFFFFF?text=Ecomm+Explosion');"></div>
                     <div class="case-content">
-                        <h3>E-commerce Store Growth</h3>
-                        <p>An online fashion retailer struggling with low traffic and conversions.</p>
+                         <span class="category">E-commerce</span>
+                        <h3>From Stagnant Sales to 200% Revenue Growth</h3>
+                        <p>This fashion retailer was lost in the online crowd. Our integrated SEO & PPC strategy targeted high-intent buyers, tripling their revenue in just 6 months.</p>
                         <div class="case-stats">
                             <div class="stat">
-                                <h4>200%</h4>
+                                <h4>+200%</h4>
                                 <p>Revenue Increase</p>
                             </div>
                             <div class="stat">
@@ -751,16 +1048,16 @@
                 </div>
 
                 <div class="case-card">
-                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/4682B4/FFFFFF?text=Local+Biz+Growth');"></div>
+                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/4682B4/FFFFFF?text=Local+Domination');"></div>
                     <div class="case-content">
-                        <h3>Local Business Expansion</h3>
-                        <p>A fitness studio looking to attract more local clients.</p>
+                         <span class="category">Local Business</span>
+                        <h3>Local Fitness Studio Goes Viral: 500 to 10K Followers</h3>
+                        <p>Using hyper-local social media tactics and engaging content, we transformed this studio's online presence, driving massive foot traffic and community growth in 3 months.</p>
                         <div class="case-stats">
                             <div class="stat">
-                                <h4>10K</h4>
-                                <p>Instagram Followers</p>
+                                <h4>+1900%</h4> <p>Follower Growth</p>
                             </div>
-                            <div class="stat">
+                             <div class="stat">
                                 <h4>3</h4>
                                 <p>Months</p>
                             </div>
@@ -769,38 +1066,41 @@
                 </div>
 
                 <div class="case-card">
-                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/6A5ACD/FFFFFF?text=SaaS+Leads');"></div>
+                    <div class="case-img" style="background-image: url('https://placehold.co/600x400/6A5ACD/FFFFFF?text=SaaS+Lead+Machine');"></div>
                     <div class="case-content">
-                        <h3>B2B SaaS Lead Generation</h3>
-                        <p>A software company needing qualified leads at lower cost.</p>
+                         <span class="category">B2B SaaS</span>
+                        <h3>Slashing Lead Costs by 40% for SaaS Leader</h3>
+                        <p>Inefficient ad spend was draining resources. By optimizing their PPC campaigns and landing pages, we doubled qualified leads while cutting cost-per-lead significantly.</p>
                         <div class="case-stats">
                             <div class="stat">
-                                <h4>40%</h4>
-                                <p>Lower Cost-Per-Lead</p>
+                                <h4>-40%</h4>
+                                <p>Cost-Per-Lead</p>
                             </div>
                             <div class="stat">
                                 <h4>2x</h4>
-                                <p>More Leads</p>
+                                <p>Qualified Leads</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+             <div style="text-align: center; margin-top: 40px;"> <a href="#contact" class="btn">Get Results Like These →</a>
+             </div>
         </div>
     </section>
 
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>What Our Clients Say</h2>
-                <p>Don't just take our word for it - hear from our happy clients</p>
+                <h2>Hear it Directly From Our Thrilled Clients</h2>
+                <p>Our clients' success is our greatest achievement. See what they have to say about partnering with Razi Digital.</p>
             </div>
 
             <div class="testimonial-slider">
                 <div class="testimonial active">
-                    <p class="testimonial-text">"Razi Digital transformed our online sales—we went from struggling to get 10 orders a week to over 50 orders a day in just 6 months. Their team is knowledgeable, responsive, and truly cares about our success."</p>
+                    <p class="testimonial-text">"Partnering with Razi Digital was a game-changer. Our online sales exploded from a trickle to a flood (50+ orders/day!) in just 6 months. Their strategic insights and proactive approach are unmatched. Highly recommend!"</p>
                     <div class="testimonial-author">
-                        <div class="author-img" style="background-image: url('https://placehold.co/50x50/E8E8E8/BDBDBD?text=SK');"></div>
+                        <div class="author-img" style="background-image: url('https://placehold.co/60x60/E8E8E8/BDBDBD?text=SK');"></div>
                         <div class="author-info">
                             <h4>Sarah K.</h4>
                             <p>CEO, TechStart Inc.</p>
@@ -809,9 +1109,9 @@
                 </div>
 
                 <div class="testimonial">
-                    <p class="testimonial-text">"Best ROI we've ever had from marketing! We tried several agencies before finding Razi Digital, and none delivered results like they have. Our cost per acquisition dropped by 60% while increasing our total sales."</p>
+                    <p class="testimonial-text">"Stop wasting money with other agencies! Razi Digital delivered the best ROI we've ever seen. They cut our acquisition costs by 60% and simultaneously increased our overall sales. Truly phenomenal results."</p>
                     <div class="testimonial-author">
-                        <div class="author-img" style="background-image: url('https://placehold.co/50x50/E8E8E8/BDBDBD?text=MT');"></div>
+                        <div class="author-img" style="background-image: url('https://placehold.co/60x60/E8E8E8/BDBDBD?text=MT');"></div>
                         <div class="author-info">
                             <h4>Mark T.</h4>
                             <p>Owner, Elite Fitness</p>
@@ -820,9 +1120,9 @@
                 </div>
 
                 <div class="testimonial">
-                    <p class="testimonial-text">"As a small business owner, I was skeptical about digital marketing, but Razi Digital made it easy to understand and showed me exactly how my money was being spent. The results speak for themselves—we're now booked out 3 months in advance!"</p>
+                    <p class="testimonial-text">"As a small business, every dollar counts. Razi Digital demystified digital marketing and delivered tangible results. We're now consistently booked out months in advance thanks to their targeted campaigns. Worth every penny!"</p>
                     <div class="testimonial-author">
-                        <div class="author-img" style="background-image: url('https://placehold.co/50x50/E8E8E8/BDBDBD?text=LM');"></div>
+                        <div class="author-img" style="background-image: url('https://placehold.co/60x60/E8E8E8/BDBDBD?text=LM');"></div>
                         <div class="author-info">
                             <h4>Lisa M.</h4>
                             <p>Founder, Bloom Floral</p>
@@ -831,8 +1131,8 @@
                 </div>
 
                 <div class="testimonial-nav">
-                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    <button class="prev-btn" aria-label="Previous Testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn" aria-label="Next Testimonial"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -841,103 +1141,109 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-title">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>Choose the plan that fits your needs and budget</p>
+                <h2>Invest in Growth: Plans Built for ROI</h2>
+                <p>No hidden fees, no long-term contracts. Just transparent pricing designed to fuel your success.</p>
             </div>
 
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Starter</h3>
+                    <h3>Starter Launchpad</h3>
                     <div class="price">$299 <span>/month</span></div>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px;">Perfect for businesses ready to establish a strong online foundation.</p>
                     <ul class="pricing-features">
-                        <li>Basic SEO Optimization</li>
-                        <li>Social Media Management (2 platforms)</li>
-                        <li>2 Blog Posts/Month</li>
-                        <li>Monthly Analytics Report</li>
-                        <li>Email Support</li>
+                        <li>Foundation SEO Optimization</li>
+                        <li>Targeted Social Media (2 platforms)</li>
+                        <li>Authority-Building Blog Posts (2/mo)</li>
+                        <li>Clear Monthly Performance Report</li>
+                        <li>Responsive Email Support</li>
                     </ul>
-                    <a href="#contact" class="btn">Get Started</a>
+                    <a href="#contact" class="btn">Start Building Momentum</a>
                 </div>
 
                 <div class="pricing-card popular">
-                    <div class="popular-badge">Most Popular</div>
-                    <h3>Growth</h3>
+                    <div class="popular-badge">Accelerated Growth</div>
+                    <h3>Growth Engine</h3>
                     <div class="price">$699 <span>/month</span></div>
+                     <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px;">Our most popular plan for businesses serious about rapid expansion and market share.</p>
                     <ul class="pricing-features">
-                        <li>Advanced SEO Strategy</li>
-                        <li>Social Media Management (4 platforms)</li>
-                        <li>4 Blog Posts/Month</li>
-                        <li>Google/Facebook Ads Management</li>
-                        <li>Email Marketing Campaigns</li>
-                        <li>Bi-Weekly Analytics Report</li>
-                        <li>Priority Support</li>
+                        <li>Advanced SEO & Link Building</li>
+                        <li>Multi-Platform Social Strategy (4)</li>
+                        <li>Compelling Blog Content (4/mo)</li>
+                        <li>High-Converting Ads Management (Google/FB)</li>
+                        <li>Lead-Nurturing Email Campaigns</li>
+                        <li>Detailed Bi-Weekly Analytics</li>
+                        <li>Priority Strategy Support</li>
                     </ul>
-                    <a href="#contact" class="btn">Get Started</a>
+                    <a href="#contact" class="btn">Ignite Your Growth</a>
                 </div>
 
                 <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">Custom <span>/month</span></div>
+                    <h3>Market Leader</h3>
+                    <div class="price">Custom <span>/Quote</span></div>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px;">A bespoke, full-service solution for established brands aiming for total market domination.</p>
                     <ul class="pricing-features">
-                        <li>Custom Digital Marketing Strategy</li>
-                        <li>Dedicated Account Manager</li>
-                        <li>Complete Social Media Management</li>
-                        <li>Content Marketing Strategy</li>
-                        <li>PPC Advertising Management</li>
-                        <li>Advanced Analytics & Reporting</li>
-                        <li>24/7 Support</li>
+                        <li>Bespoke Digital Dominance Strategy</li>
+                        <li>Dedicated Senior Account Director</li>
+                        <li>Omni-Channel Social Management</li>
+                        <li>Comprehensive Content Authority Plan</li>
+                        <li>Advanced Multi-Platform PPC</li>
+                        <li>Full Funnel Analytics & CRO</li>
+                        <li>VIP 24/7 Support Access</li>
                     </ul>
-                    <a href="#contact" class="btn">Contact Us</a>
+                    <a href="#contact" class="btn">Request Custom Strategy</a>
                 </div>
             </div>
+             <div style="text-align: center; margin-top: 40px; font-size: 1.1rem; color: #444;"> <p><strong>Limited consultation slots available each month.</strong> Secure your spot today!</p>
+             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Let's Grow Your Business Together</h2>
-                <p>Ready to take your digital marketing to the next level? Get in touch today!</p>
+                <h2>Ready to Outperform Your Competition? Let's Talk Growth.</h2>
+                <p>Stop waiting for results, start creating them. Fill out the form below or call us now for your FREE, no-obligation strategy session.</p>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
+                    <h3>Direct Access to Growth Experts</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</p>
-                        <p><i class="fas fa-envelope"></i> hello@razidigital.com</p>
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:hello@razidigital.com">hello@razidigital.com</a></p>
                         <p><i class="fas fa-map-marker-alt"></i> 123 Marketing Ave, Suite 101, New York, NY 10001</p>
                     </div>
 
-                    <h3>Business Hours</h3>
-                    <p><i class="fas fa-clock"></i> Monday - Friday: 9am - 6pm EST</p>
-                    <p><i class="fas fa-clock"></i> Saturday: 10am - 2pm EST</p>
+                    <h3>Office Hours (EST)</h3>
+                    <p><i class="fas fa-clock"></i> Monday - Friday: 9am - 6pm</p>
+                    <p><i class="fas fa-clock"></i> Saturday: 10am - 2pm (By Appointment)</p>
 
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="tel" placeholder="Your Phone">
-                        <select required>
-                            <option value="">I'm interested in...</option>
-                            <option value="seo">SEO Services</option>
-                            <option value="social">Social Media Marketing</option>
-                            <option value="ppc">PPC Advertising</option>
-                            <option value="content">Content Marketing</option>
-                            <option value="web">Web Design</option>
-                            <option value="other">Other Services</option>
+                     <h3>Get Your Free Growth Blueprint</h3> <form id="contactForm">
+                        <input type="text" name="name" placeholder="Your Name *" required>
+                        <input type="email" name="email" placeholder="Your Email *" required>
+                        <input type="tel" name="phone" placeholder="Your Phone (Optional)">
+                         <input type="text" name="company" placeholder="Company Name (Optional)"> <select name="interest" required>
+                            <option value="">What service interests you most? *</option>
+                            <option value="seo">Skyrocket SEO Rankings</option>
+                            <option value="social">Dominate Social Media</option>
+                            <option value="ppc">Maximize Ad ROI (PPC)</option>
+                            <option value="content">Become an Authority (Content)</option>
+                            <option value="web">Convert More Visitors (Web Design)</option>
+                             <option value="growth_plan">Get My Free Growth Blueprint</option> <option value="other">Something Else</option>
                         </select>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                        <textarea name="message" placeholder="Tell us briefly about your goals *" required></textarea>
+                        <button type="submit" class="btn">Send My Request →</button>
+                         <div class="form-message" id="formMessage"></div> </form>
+                    <p style="font-size: 0.85rem; margin-top: 15px; opacity: 0.8;">*Required fields. We respect your privacy and will never share your information.</p>
                 </div>
             </div>
         </div>
@@ -948,43 +1254,45 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>Razi Digital Agency</h3>
-                    <p>Helping businesses grow online since 2012 with data-driven digital marketing strategies.</p>
+                    <p>Your dedicated partner in achieving sustainable online growth and dominating your market through data-driven digital marketing excellence.</p>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Quick Links</h3>
+                    <h3>Navigate</h3>
                     <ul class="footer-links">
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#why-us">Why Choose Us</a></li>
-                        <li><a href="#case-studies">Case Studies</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#why-us">Why Razi Digital?</a></li>
+                        <li><a href="#case-studies">Client Results</a></li>
+                        <li><a href="#pricing">Pricing Plans</a></li>
+                        <li><a href="#contact">Free Strategy Call</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Services</h3>
+                    <h3>Core Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#services">SEO Optimization</a></li>
-                        <li><a href="#services">Social Media Marketing</a></li>
-                        <li><a href="#services">PPC Advertising</a></li>
-                        <li><a href="#services">Content Marketing</a></li>
-                        <li><a href="#services">Web Design</a></li>
+                        <li><a href="#services">Revenue-Driving SEO</a></li>
+                        <li><a href="#services">Conversion-Focused SMM</a></li>
+                        <li><a href="#services">ROI-Maximized PPC</a></li>
+                        <li><a href="#services">Authority Content</a></li>
+                        <li><a href="#services">High-Converting Web Design</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
+                    <h3>Connect</h3>
+                     <ul class="footer-links">
+                         <li><a href="tel:+15551234567"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> +1 (555) 123-4567</a></li>
+                         <li><a href="mailto:hello@razidigital.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> hello@razidigital.com</a></li>
+                         <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> 123 Marketing Ave, NY</a></li>
+                         <li><a href="#">Privacy Policy</a></li>
+                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="copyright">
-                <p>&copy; <span id="current-year"></span> Razi Digital Agency. All Rights Reserved.</p>
+                <p>&copy; <span id="current-year"></span> Razi Digital Agency. Stop Competing, Start Dominating.</p>
             </div>
         </div>
     </footer>
@@ -995,56 +1303,49 @@
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
         let currentTestimonial = 0;
+        let testimonialInterval; // Variable to hold the interval ID
 
         function showTestimonial(index) {
-            if (!testimonials || testimonials.length === 0) return; // Guard clause
+            if (!testimonials || testimonials.length === 0) return;
 
-            testimonials.forEach(testimonial => {
-                testimonial.classList.remove('active');
+            // Ensure index is valid
+            const validIndex = (index + testimonials.length) % testimonials.length;
+
+            testimonials.forEach((testimonial, i) => {
+                if (i === validIndex) {
+                    testimonial.classList.add('active');
+                } else {
+                    testimonial.classList.remove('active');
+                }
             });
+            currentTestimonial = validIndex;
+        }
 
-            // Ensure index is within bounds
-             if (index >= 0 && index < testimonials.length) {
-                 testimonials[index].classList.add('active');
-                 currentTestimonial = index;
-             } else {
-                 // Handle invalid index if necessary, e.g., default to 0
-                 if (testimonials.length > 0) {
-                     testimonials[0].classList.add('active');
-                     currentTestimonial = 0;
-                 }
+        function startTestimonialRotation() {
+             // Clear existing interval before starting a new one
+             clearInterval(testimonialInterval);
+             if (testimonials.length > 1) { // Only rotate if more than one testimonial
+                 testimonialInterval = setInterval(() => {
+                     showTestimonial(currentTestimonial + 1);
+                 }, 6000); // Rotate every 6 seconds
              }
         }
 
          // Check if buttons exist before adding listeners
          if (prevBtn && nextBtn && testimonials.length > 0) {
             prevBtn.addEventListener('click', () => {
-                let newIndex = currentTestimonial - 1;
-                if (newIndex < 0) {
-                    newIndex = testimonials.length - 1;
-                }
-                showTestimonial(newIndex);
+                showTestimonial(currentTestimonial - 1);
+                startTestimonialRotation(); // Restart timer on manual navigation
             });
 
             nextBtn.addEventListener('click', () => {
-                let newIndex = currentTestimonial + 1;
-                if (newIndex >= testimonials.length) {
-                    newIndex = 0;
-                }
-                showTestimonial(newIndex);
+                showTestimonial(currentTestimonial + 1);
+                startTestimonialRotation(); // Restart timer on manual navigation
             });
 
-             // Auto-rotate testimonials only if there are testimonials
-             setInterval(() => {
-                 let newIndex = currentTestimonial + 1;
-                 if (newIndex >= testimonials.length) {
-                     newIndex = 0;
-                 }
-                 showTestimonial(newIndex);
-             }, 5000); // Rotate every 5 seconds
-
-             // Initialize the first testimonial
+             // Initialize the first testimonial and start rotation
              showTestimonial(0);
+             startTestimonialRotation();
 
          } else if (testimonials.length > 0) {
              // If buttons aren't found but testimonials exist, show the first one
@@ -1060,8 +1361,7 @@
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    // Calculate offset for fixed header if needed
-                    const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 60; // Use estimated height if header not found quickly
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -1073,31 +1373,85 @@
             });
         });
 
-        // Form submission
+        // Form submission handling
         const contactForm = document.getElementById('contactForm');
-        if(contactForm){ // Check if form exists
+        const formMessage = document.getElementById('formMessage'); // Get the message element
+
+        if(contactForm && formMessage){ // Check if form and message element exist
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                // Basic validation example (can be expanded)
+                // Basic validation example
                 const emailInput = contactForm.querySelector('input[type="email"]');
-                if (emailInput && !emailInput.value.includes('@')) {
-                     alert('Please enter a valid email address.');
+                const nameInput = contactForm.querySelector('input[type="text"]');
+                const messageInput = contactForm.querySelector('textarea');
+                const interestSelect = contactForm.querySelector('select');
+
+                if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim() || !interestSelect.value) {
+                    formMessage.textContent = 'Please fill out all required fields (*).';
+                    formMessage.className = 'form-message error'; // Add error class
+                    formMessage.style.display = 'block';
                      return;
                 }
+                 if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+                     formMessage.textContent = 'Please enter a valid email address.';
+                     formMessage.className = 'form-message error';
+                     formMessage.style.display = 'block';
+                     return;
+                 }
 
-                // Here you would typically send the form data to your server
-                // using fetch() or XMLHttpRequest
-                // Example:
-                // const formData = new FormData(contactForm);
-                // fetch('/your-server-endpoint', { method: 'POST', body: formData })
-                //   .then(response => response.json())
-                //   .then(data => { alert('Success!'); contactForm.reset(); })
-                //   .catch(error => { alert('Error sending message.'); });
+                // --- Replace with your actual form submission logic (e.g., fetch API) ---
+                // Simulate successful submission for demo
+                console.log('Form submitted (simulated)');
+                // Display success message
+                formMessage.textContent = 'Thank you! Your request has been sent. We\'ll be in touch shortly.';
+                formMessage.className = 'form-message success'; // Add success class
+                formMessage.style.display = 'block';
+                contactForm.reset(); // Clear the form
 
-                // For this demo, we'll just show an alert
-                alert('Thank you for your message! We will contact you soon.');
-                contactForm.reset();
+                // Optional: Hide message after a few seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                    formMessage.textContent = '';
+                    formMessage.className = 'form-message'; // Reset class
+                }, 6000);
+                 // --- End of simulation ---
+
+                 /*
+                 // Example using fetch (replace '/your-server-endpoint' and adjust):
+                 const formData = new FormData(contactForm);
+                 fetch('/your-server-endpoint', {
+                     method: 'POST',
+                     body: formData
+                 })
+                 .then(response => {
+                     if (!response.ok) {
+                         throw new Error('Network response was not ok');
+                     }
+                     return response.json(); // Or response.text() depending on server response
+                 })
+                 .then(data => {
+                     console.log('Success:', data);
+                     formMessage.textContent = 'Thank you! Your request has been sent.';
+                     formMessage.className = 'form-message success';
+                     formMessage.style.display = 'block';
+                     contactForm.reset();
+                 })
+                 .catch(error => {
+                     console.error('Error:', error);
+                     formMessage.textContent = 'Sorry, there was an error sending your message. Please try again later.';
+                     formMessage.className = 'form-message error';
+                     formMessage.style.display = 'block';
+                 })
+                 .finally(() => {
+                     // Optional: Hide message after timeout regardless of success/error
+                     setTimeout(() => {
+                         formMessage.style.display = 'none';
+                         formMessage.textContent = '';
+                         formMessage.className = 'form-message';
+                     }, 6000);
+                 });
+                 */
             });
         }
 
@@ -1106,15 +1460,6 @@
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
         }
-
-        // Add basic mobile menu toggle functionality (requires CSS for styling the menu)
-        // const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        // const navLinks = document.querySelector('.nav-links');
-        // if (mobileMenuToggle && navLinks) {
-        //     mobileMenuToggle.addEventListener('click', () => {
-        //         navLinks.classList.toggle('active'); // Add/remove 'active' class to show/hide
-        //     });
-        // }
 
     </script>
 </body>
